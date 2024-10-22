@@ -22,7 +22,7 @@ fi
 #----------------------------------
 
 if [ -z "$1" ]; then
-	continue
+  :
 else
     ID="$1"
 fi
@@ -85,7 +85,7 @@ esac
 KERNEL_VERSION=$(uname -r)
 UPTIME=$(uptime -p)
 USER_NAME=$(whoami)
-HOSTNAME=$(hostname)
+HOSTNAME=$(uname -n)
 SHELL_NAME=$(basename $SHELL)
 
 echo "$USER_NAME@$HOSTNAME"
