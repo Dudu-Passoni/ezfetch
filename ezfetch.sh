@@ -11,12 +11,22 @@ ORANGE="\033[38;5;208m"
 LIGHT_GREEN="\033[1;92m"
 BLUE="\033[1;34m"
 PURPLE="\033[1;35m"
+GREEN="\033[32m"
 
 #________________________________
 
 if [ -f /etc/os-release ]; then
 	. /etc/os-release
 fi
+
+#----------------------------------
+
+if [ -z "$1" ]; then
+	continue
+else
+    ID="$1"
+fi
+
 
 case $ID in
 
@@ -48,9 +58,17 @@ COR=${RED}
 echo -e "${PURPLE}$(cat logos/centos.txt) ${RESET}"
 COR=${PURPLE}
 		;;
+	gentoo)
+echo -e "${PURPLE}$(cat logos/gentoo.txt) ${RESET}"
+COR=${PURPLE}
+		;;
+	manjaro)
+echo -e "${GREEN}$(cat logos/manjaro.txt) ${RESET}"
+COR=${GREEN}
+		;;
 esac
 
-MANAGER_NOFORM=$(command -v pacman dpkg-query yay yum dnf zypper kiss)
+MANAGER_NOFORM=$(command -v pacman dpkg-query yay yum dnf zypper kiss emerge cpm flatpak brew pkg)
 MANAGER=$(basename "$MANAGER_NOFORM")
 
 case $MANAGER in
@@ -61,6 +79,8 @@ case $MANAGER in
 	dnf) PACOTES=$(dnf list installed | wc -l) ;;
 	zypper) PACOTES=$(zypper se | wc -l) ;;
 	kiss) PACOTES=$(kiss list | wc -l) ;;
+	emerge) PACOTES="$(qlist -I | wc -l)" ;;
+	cpm) PACOTES=$"$(cpm C)" ;;
 esac
 KERNEL_VERSION=$(uname -r)
 UPTIME=$(uptime -p)
