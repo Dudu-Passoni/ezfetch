@@ -85,7 +85,7 @@ esac
 KERNEL_VERSION=$(uname -r)
 UPTIME=$(uptime -p)
 USER_NAME=$(whoami)
-HOSTNAME=$(uname -n)
+HOSTNAME=$(cat /etc/hostname)
 SHELL_NAME=$(basename $SHELL)
 
 echo "$USER_NAME@$HOSTNAME"
