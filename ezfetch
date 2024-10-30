@@ -21,12 +21,15 @@ fi
 
 #----------------------------------
 
+# LOGOS TEST 
+
 if [ -z "$1" ]; then
   :
 else
     ID="$1"
 fi
 
+#----------------------------------
 
 case $ID in
 
@@ -79,8 +82,8 @@ case $MANAGER in
 	dnf) PACOTES=$(dnf list installed | wc -l) ;;
 	zypper) PACOTES=$(zypper se | wc -l) ;;
 	kiss) PACOTES=$(kiss list | wc -l) ;;
-	emerge) PACOTES="$(qlist -I | wc -l)" ;;
-	cpm) PACOTES=$"$(cpm C)" ;;
+	emerge) PACOTES=$(qlist -I | wc -l) ;;
+	cpm) PACOTES=$(cpm C) ;;
 esac
 KERNEL_VERSION=$(uname -r)
 UPTIME=$(uptime -p)
@@ -90,8 +93,9 @@ SHELL_NAME=$(basename $SHELL)
 
 echo "$USER_NAME@$HOSTNAME"
 echo -e "${COR}----------${RESET}o${COR}-----------${RESET}"
-echo "OS: $NAME"
+echo "OS: $PRETTY_NAME"
 echo "Kernel version: $KERNEL_VERSION"
+echo "Uptime: $UPTIME"
 echo "Packages: $PACOTES"
 echo "Shell: $SHELL_NAME"
 echo "Terminal: $TERM"
