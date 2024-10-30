@@ -34,39 +34,39 @@ fi
 case $ID in
 
 	arch)
-echo -e "${BLUE_LIGHT}$(cat logos/arch.txt) ${RESET}"
+echo -e "${BLUE_LIGHT}$(cat /usr/local/share/ezfetch/logos/arch.txt) ${RESET}"
 COR=${BLUE_LIGHT}
 		;;
 	debian)
-echo -e "${RED}$(cat logos/debian.txt) ${RESET}"
+echo -e "${RED}$(cat /usr/local/share/ezfetch/logos/debian.txt) ${RESET}"
 COR=${RED}
 		;;
 	ubuntu)
-echo -e "${ORANGE}$(cat logos/ubuntu.txt) ${RESET}"
+echo -e "${ORANGE}$(cat /usr/local/share/ezfetch/logos/ubuntu.txt) ${RESET}"
 COR=${ORANGE}
 		;;
 	mint)
-echo -e "${LIGHT_GREEN}$(cat logos/mint.txt) ${RESET}"
+echo -e "${LIGHT_GREEN}$(cat /usr/local/share/ezfetch/logos/mint.txt) ${RESET}"
 COR=${LIGHT_GREEN}
 		;;
 	fedora)
-echo -e "${BLUE}$(cat logos/fedora.txt) ${RESET}"
+echo -e "${BLUE}$(cat /usr/local/share/ezfetch/logos/fedora.txt) ${RESET}"
 COR=${BLUE}
 		;;
 	rhel)
-echo -e "${RED}$(cat logos/rhel.txt) ${RESET}"
+echo -e "${RED}$(cat /usr/local/share/ezfetch/logos/rhel.txt) ${RESET}"
 COR=${RED}
 		;;
 	centos)
-echo -e "${PURPLE}$(cat logos/centos.txt) ${RESET}"
+echo -e "${PURPLE}$(cat /usr/local/share/ezfetch/logos/centos.txt) ${RESET}"
 COR=${PURPLE}
 		;;
 	gentoo)
-echo -e "${PURPLE}$(cat logos/gentoo.txt) ${RESET}"
+echo -e "${PURPLE}$(cat /usr/local/share/ezfetch/logos/gentoo.txt) ${RESET}"
 COR=${PURPLE}
 		;;
 	manjaro)
-echo -e "${GREEN}$(cat logos/manjaro.txt) ${RESET}"
+echo -e "${GREEN}$(cat /usr/local/share/ezfetch/logos/manjaro.txt) ${RESET}"
 COR=${GREEN}
 		;;
 esac
