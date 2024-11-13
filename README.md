@@ -17,3 +17,8 @@ git clone https://github.com/Dudu-Passoni/ezfetch.git && cd ezfetch && ./install
 ```
 ./uninstall.sh
 ```
+
+## Pictures
+<p align="">
+  <img src="https://github.com/user-attachments/assets/68b3c35e-1038-48e1-9964-baf53c6836ab" alt="image" width="400">
+</p>
