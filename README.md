@@ -21,4 +21,6 @@ git clone https://github.com/Dudu-Passoni/ezfetch.git && cd ezfetch && ./install
 ## Pictures
 <p align="">
   <img src="https://github.com/user-attachments/assets/68b3c35e-1038-48e1-9964-baf53c6836ab" alt="image" width="400">
+  <img src="https://github.com/user-attachments/assets/3308fd65-1e91-409e-863e-8d5ed41fae8c" alt="image" width="400" height="280">
+
 </p>
