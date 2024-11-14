@@ -45,7 +45,7 @@ COR=${RED}
 echo -e "${ORANGE}$(cat /usr/local/share/ezfetch/logos/ubuntu.txt) ${RESET}"
 COR=${ORANGE}
 		;;
-	mint)
+	linuxmint)
 echo -e "${LIGHT_GREEN}$(cat /usr/local/share/ezfetch/logos/mint.txt) ${RESET}"
 COR=${LIGHT_GREEN}
 		;;
