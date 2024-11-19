@@ -3,6 +3,7 @@
 #@Author: Luis Eduardo Contini Passoni
 
 # COLOR FOR THE LOGOS
+echo ""
 
 BLUE_LIGHT="\033[1;36m"
 RESET="\033[37m" #WHITE
@@ -71,10 +72,11 @@ COR=${GREEN}
 		;;
 esac
 
-MANAGER_NOFORM=$(command -v pacman dpkg-query yay yum dnf zypper kiss emerge cpm flatpak brew pkg)
+MANAGER_NOFORM=$(command -v pacman apt dpkg-query yay yum dnf zypper kiss emerge cpm flatpak brew pkg)
 MANAGER=$(basename "$MANAGER_NOFORM")
 
 case $MANAGER in
+  apt) PACOTES=$(apt list --installed | wc -l) ;;
 	dpkg-query) PACOTES=$(dpkg -l | wc -l) ;;
 	pacman) PACOTES=$(pacman -Q | wc -l) ;;
 	yay) PACOTES=$(yay -Q | wc -l) ;;
