@@ -18,6 +18,16 @@ git clone https://github.com/Dudu-Passoni/ezfetch.git && cd ezfetch && ./install
 ./uninstall.sh
 ```
 
+### Update
+
+
+* To update ezfetch to the latest version, go to the ezfetch directory where you downloaded it. (if you removed the directory you can ```git clone https://github.com/Dudu-Passoni/ezfetch.git```)
+* and run the update script.
+
+```
+./update.sh
+```
+
 ## Pictures
 <p align="">
   <img src="https://github.com/user-attachments/assets/68b3c35e-1038-48e1-9964-baf53c6836ab" alt="image" width="400">
