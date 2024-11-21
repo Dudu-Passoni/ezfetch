@@ -2,8 +2,9 @@
 
 #@Author: Luis Eduardo Contini Passoni
 
-# COLOR FOR THE LOGOS
 echo ""
+
+# COLOR FOR THE LOGOS
 
 BLUE_LIGHT="\033[1;36m"
 RESET="\033[37m" #WHITE
@@ -69,7 +70,16 @@ COR=${PURPLE}
 	manjaro)
 echo -e "${GREEN}$(cat /usr/local/share/ezfetch/logos/manjaro.txt) ${RESET}"
 COR=${GREEN}
+		;;	
+  opensuse)
+echo -e "${GREEN}$(cat /usr/local/share/ezfetch/logos/opensuse.txt) ${RESET}"
+COR=${GREEN}
 		;;
+  popos)
+echo -e "${GREEN}$(cat /usr/local/share/ezfetch/logos/popos.txt) ${RESET}"
+COR=${GREEN}
+		;;
+
 esac
 
 MANAGER_NOFORM=$(command -v pacman apt dpkg-query yay yum dnf zypper kiss emerge cpm flatpak brew pkg)
@@ -86,13 +96,18 @@ case $MANAGER in
 	kiss) PACOTES=$(kiss list | wc -l) ;;
 	emerge) PACOTES=$(qlist -I | wc -l) ;;
 	cpm) PACOTES=$(cpm C) ;;
+
 esac
 KERNEL_VERSION=$(uname -r)
 UPTIME=$(uptime -p)
 USER_NAME=$(whoami)
 HOSTNAME=$(cat /etc/hostname)
-SHELL_NAME=$(basename $SHELL)
+# Uppercase the first letter of the shell name
+SHELL_NAME=$(basename $SHELL | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}')
+# Formated terminal name
+TERM_NAME=$(echo $TERM | awk -F'-' '{print $2}')
 
+echo ""
 echo "$USER_NAME@$HOSTNAME"
 echo -e "${COR}----------${RESET}o${COR}-----------${RESET}"
 echo "OS: $PRETTY_NAME"
@@ -100,4 +115,4 @@ echo "Kernel version: $KERNEL_VERSION"
 echo "Uptime: $UPTIME"
 echo "Packages: $PACOTES"
 echo "Shell: $SHELL_NAME"
-echo "Terminal: $TERM"
+echo "Terminal: $TERM_NAME"
