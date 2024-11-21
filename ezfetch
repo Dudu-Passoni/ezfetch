@@ -7,7 +7,7 @@ echo ""
 # COLOR FOR THE LOGOS
 
 BLUE_LIGHT="\033[1;36m"
-RESET="\033[37m" #WHITE
+RESET="\033[0m" #WHITE
 RED="\033[1;31m"
 ORANGE="\033[38;5;208m"
 LIGHT_GREEN="\033[1;92m"
@@ -116,3 +116,24 @@ echo "Uptime: $UPTIME"
 echo "Packages: $PACOTES"
 echo "Shell: $SHELL_NAME"
 echo "Terminal: $TERM_NAME"
+
+# Color pallet printing
+
+if [ -z "$1" ]; then
+  :
+elif [ "$1" == "-c" ];then
+    echo ""
+for i in {0..15}; do
+    echo -e -n "\033[48;5;${i}m    \033[0m"  # Imprime o quadrado de cor
+    if (( (i + 1) % 8 == 0 )); then
+        echo  # Quebra de linha a cada 8 cores
+    fi
+done
+
+echo
+
+fi
+
+
+
+
