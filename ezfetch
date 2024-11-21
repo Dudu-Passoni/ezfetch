@@ -117,14 +117,24 @@ echo "Packages: $PACOTES"
 echo "Shell: $SHELL_NAME"
 echo "Terminal: $TERM_NAME"
 
+#If the editor variable is null, prints nothing, if its declared print the name with first letter capitalized. 
+EDITOR_NAME=${VISUAL:-"$EDITOR"}
+
+if [ -z "$EDITOR_NAME" ]; then
+  :
+else
+EDITOR_NAME_CAPITALIZED=$(echo "$EDITOR_NAME" | awk '{print toupper(substr($0,1,1)) substr($0,2)}')
+  echo "Editor: $EDITOR_NAME_CAPITALIZED"
+fi
+
 # Color pallet printing
 
 if [ -z "$1" ]; then
   :
 elif [ "$1" == "-c" ];then
     echo ""
-for i in {0..15}; do
-    echo -e -n "\033[48;5;${i}m    \033[0m"  # Imprime o quadrado de cor
+for i in {0..7}; do
+    echo -e -n "\033[48;5;${i}m  \033[0m"  # Imprime o quadrado de cor
     if (( (i + 1) % 8 == 0 )); then
         echo  # Quebra de linha a cada 8 cores
     fi
@@ -133,7 +143,4 @@ done
 echo
 
 fi
-
-
-
 

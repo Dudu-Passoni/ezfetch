@@ -26,6 +26,5 @@ fi
 sudo rm /usr/local/bin/ezfetch
 sudo rm -Rf /usr/local/share/ezfetch
 
-
 echo "Desinstalação completa. Para que as alterações tenham efeito, reinicie seu terminal ou execute 'source ~/.bashrc' ou 'source ~/.zshrc'."
 
